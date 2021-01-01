@@ -82,8 +82,7 @@ def handle_message(event):
 
     if "關於商品" in msg:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(
-            text='詳情請上我們官方網站喔謝謝您~')
-                                   )
+            text='詳情請上我們官方網站喔謝謝您~'))
         return
 
     if "我有問題" in msg:
