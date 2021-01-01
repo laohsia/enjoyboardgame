@@ -108,7 +108,7 @@ def handle_message(event):
                 spacing='sm',
                 contents=[
                     # callAction, separator, websiteAction
-                    SpacerComponent(size='sm'),
+                    SeparatorComponent(),
                     # callAction
                     ButtonComponent(
                         style='link',
