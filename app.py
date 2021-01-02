@@ -89,10 +89,11 @@ def handle_message(event):
 
     if "店鋪位置" in msg:
         line_bot_api.reply_message(event.reply_token,LocationSendMessage(
-            title='Enjoy Board Game Location'),
+            title='Enjoy Board Game Location',
             address='NCU EEIT',
             latitude=24.969388594485057,
             longitude=121.19105616458904)
+        )
         return
 
     if "我有問題" in msg:
