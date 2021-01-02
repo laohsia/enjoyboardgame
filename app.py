@@ -80,7 +80,7 @@ def handle_message(event):
                            text='快來見識有史以來最瘋狂的駱駝大賽！\n身為埃及上流社會的你，來到這裡試試手氣，對自己看好的駱駝下注，以期在分段賽及賽終時贏得最多獎金。\n然而，互相揹負的駱駝，讓賽況變得更難預測。抓住比賽的節奏，精準掌握下注時機，才是讓你贏錢的關鍵。\n令人傻眼的是，來了兩名新的選手 —— 逆向奔馳的瘋狂駱駝，儘管立刻喪失了參賽資格，但仍嚴重驚擾了整場賽事⋯⋯', title='駱駝大賽',
                            actions=[
                 URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=3Iye_KoLu6M&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia')
-            ]),
+            ])
         ])
         template_message = TemplateSendMessage(
             alt_text='Carousel alt text', template=carousel_template)
