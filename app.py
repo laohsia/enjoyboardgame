@@ -103,7 +103,7 @@ def handle_message(event):
             hero=ImageComponent(
                 url='https://img.ruten.com.tw/s1/5/5a/87/21715845113479_395.PNG',
                 size='full',
-                aspect_ratio='20:13',
+                aspect_ratio='15:10',
                 aspect_mode='cover',
                 action=URIAction(uri='https://img.ruten.com.tw/s1/5/5a/87/21715845113479_395.PNG', label='label')
             ),
