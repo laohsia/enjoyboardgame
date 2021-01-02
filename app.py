@@ -57,36 +57,31 @@ def handle_message(event):
     if "最新商品消息" in msg:
         carousel_template = CarouselTemplate(columns=[
             CarouselColumn(thumbnail_image_url='https://uploads-ssl.webflow.com/575714cc825e8dbc6c83b98a/5fd9c3b6cbffe80c6574ffbe_Animal%20Upon%20Animal_X%27mas_Box_3D_DE.jpg',
-                           text='當外面開始天寒地凍，但屋內變得溫暖舒適，你會知道，聖誕的腳步近了！\n所有的動物決定以一場堆疊友誼賽來慶祝佳節。松鼠時而在冰雪覆蓋的大地上奔跑，時而隱身於柏樹茂密的葉子中，一會兒又淘氣地在枝頭間跳躍，瞬間便俐落地跳落雪橇上。\n這回駕馭雪橇的不是聖誕老人，而是企鵝！雪兔也來湊熱鬧囉！松鼠一鼓作氣，爬上兔子的長耳朵，跳上樹稍的星星，居高臨下，帶著自豪以及對即將到來聖誕節的期待，環視著美妙的冬季景緻。\n遊戲中，誰能率先將自己所有配件疊上金字塔？', title='動物疊疊樂 聖誕金字塔',
+                           text='聖誕節!所有的動物決定以一場堆疊友誼賽來慶祝佳節。遊戲中，誰能率先將自己所有配件疊上金字塔？', title='動物疊疊樂 聖誕金字塔',
                            actions=[
-                URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=LfsPqDwt5aU&feature=emb_title&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia'),
-                MessageAction(label='我要購買', text='我要購買')
-            ]),
+                URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=LfsPqDwt5aU&feature=emb_title&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia')
+                ]),
             CarouselColumn(thumbnail_image_url='https://uploads-ssl.webflow.com/575714cc825e8dbc6c83b98a/5f6d89f01b318a3b7ff66db5_Night%20of%20Witnesses_Box.jpg',
-                           text='疑神疑鬼的密室推理陣營遊戲。\n山中作客的夜晚，主人慘遭殺害！\n殺人魔就在受邀的賓客中，為了避免殺戮繼續蔓延，賓客們交換目擊情報，討論兇手的去向。在有限的時間內，賓客能否藉由各自職業上的優勢，識破殺人魔與其共犯羅織的謊言，並經由投票將嫌疑人關進鍋爐室裡，確保自身的安全？', title='目擊者之夜',
+                           text='山中作客的夜晚，主人慘遭殺害！賓客能否藉由各自職業上的優勢，識破殺人魔與其共犯羅織的謊言？', title='目擊者之夜',
                            actions=[
-                URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=do9kypzitus&feature=emb_title&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia'),
-                MessageAction(label='我要購買', text='我要購買')
+                URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=do9kypzitus&feature=emb_title&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia')
             ]),
             CarouselColumn(thumbnail_image_url='https://uploads-ssl.webflow.com/575714cc825e8dbc6c83b98a/5ab8f125ff9c8b071bceccc8_Bamboleo_Box_3D.jpg',
-                           text='平衡天使是給所有重力學專家，及所有想要成為這方面專家的人的一款極富技巧性的遊戲！\n一片放在基座上的木盤承載了25個積木，玩家們輪流從木盤上拿取一個積木，依重力法則，平衡天使會讓木盤以你想像不到的方式傾斜。\n平衡天使是適合闔家進行的平衡挑戰，參與遊戲或旁觀都十分有趣。', title='平衡天使',
+                           text='平衡天使是給所有重力學專家的一款極富技巧性的遊戲！平衡天使會讓木盤以你想像不到的方式傾斜，參與遊戲或旁觀都十分有趣。', title='平衡天使',
                            actions=[
-                URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=EmPR8leNWhk&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia'),
-                MessageAction(label='我要購買', text='我要購買')
+                URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=EmPR8leNWhk&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia')
+            ]),
+
+            CarouselColumn(thumbnail_image_url='https://uploads-ssl.webflow.com/575714cc825e8dbc6c83b98a/5d1c01a5d9148d107e01c93c_BOOOOOM_Box_3D.jpg',
+                           text='這是個與和平完全無關的遊戲。\n遊戲中展現弱肉強食的黑暗面，讓自己成為唯一倖存的玩家，以獲得勝利。', title='你炸我彈他',
+                           actions=[
+                URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=eeGmS_ZjFR8&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia'),
+            ]),
+            CarouselColumn(thumbnail_image_url='https://uploads-ssl.webflow.com/575714cc825e8dbc6c83b98a/5e282a8b8fc29850b3980b60_CamelUp_2020_BOX.jpg',
+                           text='快來見識有史以來最瘋狂的駱駝大賽！\n對自己看好的駱駝下注，以期在分段賽及賽終時贏得最多獎金。', title='駱駝大賽',
+                           actions=[
+                URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=3Iye_KoLu6M&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia'),
             ])
-        #,
-        #    CarouselColumn(thumbnail_image_url='https://uploads-ssl.webflow.com/575714cc825e8dbc6c83b98a/5d1c01a5d9148d107e01c93c_BOOOOOM_Box_3D.jpg',
-        #                  text='這是個與和平完全無關的遊戲，也扯不上公平正義。\n遊戲中完全展現弱肉強食的黑暗面，善用手牌，將其他玩家炸死，讓自己成為唯一倖存的玩家，以獲得勝利。\n但是，黑暗中總是有著光明，在極端的環境下，你是否能看見人性中善良的曙光在若隱若現…', title='你炸我彈他',
-        #                  actions=[
-        #       URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=eeGmS_ZjFR8&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia'),
-        #       MessageAction(label='我要購買', text='我要購買')
-        #   ]),
-        #   CarouselColumn(thumbnail_image_url='https://uploads-ssl.webflow.com/575714cc825e8dbc6c83b98a/5e282a8b8fc29850b3980b60_CamelUp_2020_BOX.jpg',
-        #                  text='快來見識有史以來最瘋狂的駱駝大賽！\n身為埃及上流社會的你，來到這裡試試手氣，對自己看好的駱駝下注，以期在分段賽及賽終時贏得最多獎金。\n然而，互相揹負的駱駝，讓賽況變得更難預測。抓住比賽的節奏，精準掌握下注時機，才是讓你贏錢的關鍵。\n令人傻眼的是，來了兩名新的選手 —— 逆向奔馳的瘋狂駱駝，儘管立刻喪失了參賽資格，但仍嚴重驚擾了整場賽事⋯⋯', title='駱駝大賽',
-        #                  actions=[
-        #       URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=3Iye_KoLu6M&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia'),
-        #       MessageAction(label='我要購買', text='我要購買')
-        #   ])
         ])
         template_message = TemplateSendMessage(
             alt_text='Carousel alt text', template=carousel_template)
