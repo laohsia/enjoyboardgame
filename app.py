@@ -54,7 +54,7 @@ def handle_message(event):
     msg = event.message.text
     #re = "超過回覆範圍喔! 麻煩重新再輸入一次"
 
-    if "最新消息" in msg:
+    if "最新商品消息" in msg:
         carousel_template = CarouselTemplate(columns=[
             CarouselColumn(thumbnail_image_url='https://uploads-ssl.webflow.com/575714cc825e8dbc6c83b98a/5fd9c3b6cbffe80c6574ffbe_Animal%20Upon%20Animal_X%27mas_Box_3D_DE.jpg',
                            text='當外面開始天寒地凍，但屋內變得溫暖舒適，你會知道，聖誕的腳步近了！\n所有的動物決定以一場堆疊友誼賽來慶祝佳節。松鼠時而在冰雪覆蓋的大地上奔跑，時而隱身於柏樹茂密的葉子中，一會兒又淘氣地在枝頭間跳躍，瞬間便俐落地跳落雪橇上。\n這回駕馭雪橇的不是聖誕老人，而是企鵝！雪兔也來湊熱鬧囉！松鼠一鼓作氣，爬上兔子的長耳朵，跳上樹稍的星星，居高臨下，帶著自豪以及對即將到來聖誕節的期待，環視著美妙的冬季景緻。\n遊戲中，誰能率先將自己所有配件疊上金字塔？', title='動物疊疊樂 聖誕金字塔',
