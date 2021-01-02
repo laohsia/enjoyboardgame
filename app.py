@@ -67,18 +67,18 @@ def handle_message(event):
                 URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=do9kypzitus&feature=emb_title&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia')
             ]),
             CarouselColumn(thumbnail_image_url='https://uploads-ssl.webflow.com/575714cc825e8dbc6c83b98a/5ab8f125ff9c8b071bceccc8_Bamboleo_Box_3D.jpg',
-                           text='平衡天使是給所有重力學專家的一款極富技巧性的遊戲！平衡天使會讓木盤以你想像不到的方式傾斜，參與遊戲或旁觀都十分有趣。', title='平衡天使',
+                           text='平衡天使是給所有重力學專家的一款極富技巧性的遊戲！參與遊戲或旁觀都十分有趣。', title='平衡天使',
                            actions=[
                 URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=EmPR8leNWhk&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia')
             ]),
 
             CarouselColumn(thumbnail_image_url='https://uploads-ssl.webflow.com/575714cc825e8dbc6c83b98a/5d1c01a5d9148d107e01c93c_BOOOOOM_Box_3D.jpg',
-                           text='這是個與和平完全無關的遊戲。\n遊戲中展現弱肉強食的黑暗面，讓自己成為唯一倖存的玩家，以獲得勝利。', title='你炸我彈他',
+                           text='這是個與和平完全無關的遊戲。\n遊戲中展現弱肉強食的黑暗面，讓自己成為唯一倖存的玩家。', title='你炸我彈他',
                            actions=[
                 URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=eeGmS_ZjFR8&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia'),
             ]),
             CarouselColumn(thumbnail_image_url='https://uploads-ssl.webflow.com/575714cc825e8dbc6c83b98a/5e282a8b8fc29850b3980b60_CamelUp_2020_BOX.jpg',
-                           text='快來見識有史以來最瘋狂的駱駝大賽！\n對自己看好的駱駝下注，以期在分段賽及賽終時贏得最多獎金。', title='駱駝大賽',
+                           text='快來見識有史以來最瘋狂的駱駝大賽！對自己看好的駱駝下注，以期在分段賽及賽終時贏得最多獎金。', title='駱駝大賽',
                            actions=[
                 URIAction(label='介紹影片', uri='https://www.youtube.com/watch?v=3Iye_KoLu6M&ab_channel=%E6%96%B0%E5%A4%A9%E9%B5%9D%E5%A0%A1%E6%A1%8C%E9%81%8ASwanPanasia'),
             ])
@@ -188,13 +188,13 @@ def handle_message(event):
         return
 
     if "專題成員有誰?" in msg:
-        re = "成員包含: (組長)夏浩庭、(技術長)黃凱廷、劉哲文、黃冠華、王泓智 "
+        re = "成員包含:\n(組長)夏浩庭\n(技術長)黃凱廷\n(組員)劉哲文\n(組員)黃冠華\n(組員)王泓智 "
     elif "訓練時數多久?" in msg:
-        re = "跨域Java工程師就業養成班 訓練時數為546小時"
+        re = "跨域Java工程師就業養成班，總訓練時數為546小時!"
     elif "為何選擇此主題?" in msg:
-        re = "目前國際疫情持續延燒，且有越演越烈的趨勢，因此不論是強制隔離或自主居家檢疫，人們待在家中與家人相處的時間大幅增加，但3C產品往往佔據目光，造成'明明相處時間增加，但彼此感情未見增長，衝突反而變多'的情況出現，此時桌遊即為多人互動的好選擇，既可以遠離螢幕，又可充分與他人互動，故本組以桌遊作為題目進行專題發想，目標建立一個桌遊相關的網站。"
+        re = "目前國際疫情持續延燒，且有越演越烈的趨勢，因此不論是強制隔離或自主居家檢疫，人們待在家中與家人相處的時間大幅增加，但3C產品往往佔據目光，造成'明明相處時間增加，但彼此感情未見增長，衝突反而變多'的情況出現，\n此時桌遊即為多人互動的好選擇!\n既可以遠離螢幕，又可充分與他人互動，故本組以桌遊作為題目進行專題發想，目標建立一個桌遊相關的網站。"
     elif "網站特色?" in msg:
-        re = "網站提供完整的桌遊檢索系統供使用者搜尋以及購買、追蹤想體驗的桌遊，亦有關於桌遊的討論區和消息專區，讓使用者觀看其他玩家的評論、遊戲體驗、開箱文，也可透過網站報名桌遊相關的課程、培訓活動。此外，前端頁面全為組員自行設計，未套用任何現成版面，敬請您觀賞指教。"
+        re = "網站提供完整的桌遊檢索系統供使用者搜尋以及購買、追蹤想體驗的桌遊\n亦有關於桌遊的討論區和消息專區，讓使用者觀看其他玩家的評論、遊戲體驗、開箱文\n也可透過網站報名桌遊相關的課程、培訓活動。\n此外，前端頁面全為組員自行設計，未套用任何現成版面，敬請您觀賞指教!"
     elif "網站品項總共有多少?" in msg:
         re = "網站品項目前共有439個品項可供選購。"
     elif "有團購優惠嗎?" in msg:
