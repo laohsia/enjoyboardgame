@@ -52,9 +52,9 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    #re = "超過回覆範圍喔! 麻煩重新再輸入一次"
+    re = "超過回覆範圍喔! 麻煩再試試看~"
 
-    if "最新商品消息" in msg:
+    if "最新商品消息" or "商品" or "消息" or "最新" in msg:
         carousel_template = CarouselTemplate(columns=[
             CarouselColumn(thumbnail_image_url='https://uploads-ssl.webflow.com/575714cc825e8dbc6c83b98a/5fd9c3b6cbffe80c6574ffbe_Animal%20Upon%20Animal_X%27mas_Box_3D_DE.jpg',
                            text='聖誕節!所有的動物決定以一場堆疊友誼賽來慶祝佳節。遊戲中，誰能率先將自己所有配件疊上金字塔？', title='動物疊疊樂 聖誕金字塔',
@@ -88,7 +88,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, template_message)
         return
 
-    if "店鋪位置" in msg:
+    if "店鋪位置" or "位置" or "店鋪" in msg:
         line_bot_api.reply_message(event.reply_token,LocationSendMessage(
             title='Enjoy Board Game Location',
             address='NCU EEIT',
@@ -97,7 +97,7 @@ def handle_message(event):
         )
         return
 
-    if "我有問題" in msg:
+    if "我有問題" or "問題" or "疑問" or "QA" in msg:
         bubble = BubbleContainer(
             direction='ltr',
             hero=ImageComponent(
@@ -163,7 +163,7 @@ def handle_message(event):
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=MessageAction(label='有團購優惠嗎?', text="有團購優惠嗎?")
+                        action=MessageAction(label='有優惠嗎?', text="有優惠嗎?")
                     ),
                     SeparatorComponent(),
                     ButtonComponent(
@@ -187,18 +187,18 @@ def handle_message(event):
         )
         return
 
-    if "專題成員有誰?" in msg:
-        re = "成員包含:\n(組長)夏浩庭\n(技術長)黃凱廷\n(組員)劉哲文\n(組員)黃冠華\n(組員)王泓智 "
-    elif "訓練時數多久?" in msg:
+    if "專題成員有誰?" or "成員" in msg:
+        re = "成員包含:\n(組長)夏浩庭\n(技術長)黃凱廷\n(組員)劉哲文\n(組員)王泓智 "
+    elif "訓練時數多久?" or "時數" or "訓練" in msg:
         re = "跨域Java工程師就業養成班，總訓練時數為546小時!"
-    elif "為何選擇此主題?" in msg:
+    elif "為何選擇此主題?" or "主題" in msg:
         re = "目前國際疫情持續延燒，且有越演越烈的趨勢，因此不論是強制隔離或自主居家檢疫，人們待在家中與家人相處的時間大幅增加，但3C產品往往佔據目光，造成\t'''明明相處時間增加，但彼此感情未見增長，衝突反而變多'''\t的情況出現。\n此時桌遊即為多人互動的好選擇!\n既可以遠離螢幕，又可充分與他人互動，故本組以桌遊作為題目進行專題發想，目標建立一個桌遊相關的網站。"
-    elif "網站特色?" in msg:
+    elif "網站特色?" or "特色" in msg:
         re = "網站提供完整的桌遊檢索系統供使用者搜尋以及購買、追蹤想體驗的桌遊\n亦有關於桌遊的討論區和消息專區，讓使用者觀看其他玩家的評論、遊戲體驗、開箱文，也可透過網站報名桌遊相關的課程、培訓活動。\n此外，前端頁面全為組員自行設計，未套用任何現成版面，敬請您觀賞指教!"
-    elif "網站品項總共有多少?" in msg:
+    elif "網站品項總共有多少?" or "品項" or "數量" in msg:
         re = "網站品項目前共有439個品項可供選購。"
-    elif "有團購優惠嗎?" in msg:
-        re = "目前並無此設定，但未來已有此規劃，敬請期待!"
+    elif "有優惠嗎?" or "優惠" or "折扣" in msg:
+        re = "請至選單點選折扣券圖示即可領取並至官網使用"
     elif "資料來源是哪?" in msg:
         re = "網站主要商品資訊來源，皆來自新天鵝堡桌遊官方網站提供，真的非常感謝!"
     elif "可以告訴我完整的訂購流程嗎?" in msg:
