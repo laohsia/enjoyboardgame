@@ -70,7 +70,7 @@ def transcribe(wav_path):
     return None
 
 
-@handler.add(MessageEvent, message=TextMessage)
+@handler.add(MessageEvent, message=AudioMessage)
 def handle_audio(event):
 
     name_mp3 = 'recording.mp3'
@@ -85,7 +85,8 @@ def handle_audio(event):
     text = transcribe(name_wav)
     print('Transcribe:', text)
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text = text))
-
+    
+@handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
     #re = "超過回覆範圍喔! 麻煩再試試看~"
