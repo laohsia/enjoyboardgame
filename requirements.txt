@@ -2,3 +2,5 @@ line-bot-sdk
 gunicorn
 flask
 SpeechRecognition==3.8.1
+ffmpeg-python==0.2.0
+PyAudio==0.2.11
