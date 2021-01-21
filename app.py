@@ -62,7 +62,7 @@ def transcribe(wav_path):
     with sr.AudioFile(wav_path) as source:
         audio = r.record(source)
     try:
-        return r.recognize_google(audio, language="zh-TW")
+        return r.recognize_google(audio,language="zh-CHT")
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
     except sr.RequestError as e:
