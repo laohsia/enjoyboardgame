@@ -23,6 +23,7 @@ from linebot.models import (
     SeparatorComponent, QuickReply, QuickReplyButton,
     ImageSendMessage
 )
+from langconv import Converter
 
 app = Flask(__name__)
 
@@ -83,8 +84,10 @@ def handle_audio(event):
     
     os.system('ffmpeg -y -i ' + name_mp3 + ' ' + name_wav + ' -loglevel quiet')
     text = transcribe(name_wav)
-    print('Transcribe:', text)
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = text))
+    new_text = Converter('zh-hant').convert(text.decode('utf-8'))
+    new_text = new_text.encode('utf-8')
+    print('Transcribe:', new_text)
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = new_text))
     
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
