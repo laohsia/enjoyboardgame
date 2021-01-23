@@ -119,6 +119,9 @@ def handle_audio(event):
             alt_text='Carousel alt text', template=carousel_template)
         line_bot_api.reply_message(event.reply_token, template_message)
         return
+    else
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+        return
 
     if "店鋪位置"in msg or "位置"in msg or "店鋪"in msg:
         line_bot_api.reply_message(event.reply_token,LocationSendMessage(
@@ -127,6 +130,9 @@ def handle_audio(event):
             latitude=24.969388594485057,
             longitude=121.19105616458904)
         )
+        return
+    else
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
         return
 
     if "我有問題"in msg or "問題"in msg or "疑問"in msg or "QA"in msg:
@@ -218,6 +224,9 @@ def handle_audio(event):
             message
         )
         return
+    else
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+        return
 
     if "專題成員有誰?"in msg or "成員"in msg:
         re = "成員包含:\n(組長)夏浩庭\n(技術長)黃凱廷\n(組員)劉哲文\n(組員)王泓智 "
@@ -239,7 +248,10 @@ def handle_audio(event):
         re = "網站如果有新商品推出，皆會公布在最新消息上喔!我們也會發送通知給您~"
         
     print('Transcribe:', new_text)
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))
+    else
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+        
     
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
@@ -279,6 +291,9 @@ def handle_message(event):
             alt_text='Carousel alt text', template=carousel_template)
         line_bot_api.reply_message(event.reply_token, template_message)
         return
+    else
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+        return
 
     if "店鋪位置"in msg or "位置"in msg or "店鋪"in msg:
         line_bot_api.reply_message(event.reply_token,LocationSendMessage(
@@ -287,6 +302,9 @@ def handle_message(event):
             latitude=24.969388594485057,
             longitude=121.19105616458904)
         )
+        return
+    else
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
         return
 
     if "我有問題"in msg or "問題"in msg or "疑問"in msg or "QA"in msg:
@@ -378,6 +396,9 @@ def handle_message(event):
             message
         )
         return
+    else
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+        return
 
     if "專題成員有誰?"in msg or "成員"in msg:
         re = "成員包含:\n(組長)夏浩庭\n(技術長)黃凱廷\n(組員)劉哲文\n(組員)王泓智 "
@@ -401,9 +422,10 @@ def handle_message(event):
 
     
 
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=re))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=re))
+    else
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+        
 
 
 if __name__ == "__main__":
