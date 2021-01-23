@@ -118,10 +118,10 @@ def handle_audio(event):
         template_message = TemplateSendMessage(
             alt_text='Carousel alt text', template=carousel_template)
         line_bot_api.reply_message(event.reply_token, template_message)
-        return
-    else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
-        return
+        
+    #else:
+    #    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+        
 
     if "店鋪位置"in msg or "位置"in msg or "店鋪"in msg:
         line_bot_api.reply_message(event.reply_token,LocationSendMessage(
@@ -131,9 +131,9 @@ def handle_audio(event):
             longitude=121.19105616458904)
         )
         return
-    else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
-        return
+    #else:
+    #    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+    #    return
 
     if "我有問題"in msg or "問題"in msg or "疑問"in msg or "QA"in msg:
         bubble = BubbleContainer(
@@ -224,34 +224,42 @@ def handle_audio(event):
             message
         )
         return
-    else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
-        return
+    #else:
+    #    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+    #    return
 
     if "專題成員有誰?"in msg or "成員"in msg:
         re = "成員包含:\n(組長)夏浩庭\n(技術長)黃凱廷\n(組員)劉哲文\n(組員)王泓智 "
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "訓練時數多久?"in msg or "時數"in msg or "訓練"in msg:
         re = "跨域Java工程師就業養成班，總訓練時數為546小時!"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "為何選擇此主題?"in msg or "主題"in msg:
         re = "目前國際疫情持續延燒，且有越演越烈的趨勢，因此不論是強制隔離或自主居家檢疫，人們待在家中與家人相處的時間大幅增加，但3C產品往往佔據目光，造成\t'''明明相處時間增加，但彼此感情未見增長，衝突反而變多'''\t的情況出現。\n此時桌遊即為多人互動的好選擇!\n既可以遠離螢幕，又可充分與他人互動，故本組以桌遊作為題目進行專題發想，目標建立一個桌遊相關的網站。"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "網站特色?"in msg or "特色"in msg:
         re = "網站提供完整的桌遊檢索系統供使用者搜尋以及購買、追蹤想體驗的桌遊\n亦有關於桌遊的討論區和消息專區，讓使用者觀看其他玩家的評論、遊戲體驗、開箱文，也可透過網站報名桌遊相關的課程、培訓活動。\n此外，前端頁面全為組員自行設計，未套用任何現成版面，敬請您觀賞指教!"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "網站品項總共有多少?"in msg or "品項"in msg or "數量"in msg:
-        re = "網站品項目前共有439個品項可供選購。"
+        re = "網站品項目前共有400多個品項可供選購。"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "有優惠嗎?"in msg or "優惠"in msg or "折扣"in msg:
         re = "請至選單點選折扣券圖示即可領取並至官網使用"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "資料來源是哪?"in msg or "資料"in msg or "來源" in msg:
         re = "網站主要商品資訊來源，皆來自新天鵝堡桌遊官方網站提供，真的非常感謝!"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "可以告訴我完整的訂購流程嗎?"in msg or "訂購"in msg or "購買"in msg or "買"in msg:
         re = "請上我們的官方網站，將想購買的商品加入購物車中，點擊結帳按鈕，系統即會導引您完成購買流程，非常感謝您的支持!"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "期待新的商品推出" in msg:
         re = "網站如果有新商品推出，皆會公布在最新消息上喔!我們也會發送通知給您~"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
         
     print('Transcribe:', new_text)
         
-    else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))   
+    
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
     
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
@@ -290,10 +298,10 @@ def handle_message(event):
         template_message = TemplateSendMessage(
             alt_text='Carousel alt text', template=carousel_template)
         line_bot_api.reply_message(event.reply_token, template_message)
-        return
-    else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
-        return
+
+    #else:
+    #    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+    #    return
 
     if "店鋪位置"in msg or "位置"in msg or "店鋪"in msg:
         line_bot_api.reply_message(event.reply_token,LocationSendMessage(
@@ -303,9 +311,9 @@ def handle_message(event):
             longitude=121.19105616458904)
         )
         return
-    else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
-        return
+    #else:
+    #    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+    #    return
 
     if "我有問題"in msg or "問題"in msg or "疑問"in msg or "QA"in msg:
         bubble = BubbleContainer(
@@ -396,32 +404,41 @@ def handle_message(event):
             message
         )
         return
-    else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
-        return
+    #else:
+    #    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+    #    return
 
     if "專題成員有誰?"in msg or "成員"in msg:
         re = "成員包含:\n(組長)夏浩庭\n(技術長)黃凱廷\n(組員)劉哲文\n(組員)王泓智 "
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "訓練時數多久?"in msg or "時數"in msg or "訓練"in msg:
         re = "跨域Java工程師就業養成班，總訓練時數為546小時!"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "為何選擇此主題?"in msg or "主題"in msg:
         re = "目前國際疫情持續延燒，且有越演越烈的趨勢，因此不論是強制隔離或自主居家檢疫，人們待在家中與家人相處的時間大幅增加，但3C產品往往佔據目光，造成\t'''明明相處時間增加，但彼此感情未見增長，衝突反而變多'''\t的情況出現。\n此時桌遊即為多人互動的好選擇!\n既可以遠離螢幕，又可充分與他人互動，故本組以桌遊作為題目進行專題發想，目標建立一個桌遊相關的網站。"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "網站特色?"in msg or "特色"in msg:
         re = "網站提供完整的桌遊檢索系統供使用者搜尋以及購買、追蹤想體驗的桌遊\n亦有關於桌遊的討論區和消息專區，讓使用者觀看其他玩家的評論、遊戲體驗、開箱文，也可透過網站報名桌遊相關的課程、培訓活動。\n此外，前端頁面全為組員自行設計，未套用任何現成版面，敬請您觀賞指教!"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "網站品項總共有多少?"in msg or "品項"in msg or "數量"in msg:
         re = "網站品項目前共有439個品項可供選購。"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "有優惠嗎?"in msg or "優惠"in msg or "折扣"in msg:
         re = "請至選單點選折扣券圖示即可領取並至官網使用"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "資料來源是哪?"in msg or "資料"in msg or "來源" in msg:
         re = "網站主要商品資訊來源，皆來自新天鵝堡桌遊官方網站提供，真的非常感謝!"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "可以告訴我完整的訂購流程嗎?"in msg or "訂購"in msg or "購買"in msg or "買"in msg:
         re = "請上我們的官方網站，將想購買的商品加入購物車中，點擊結帳按鈕，系統即會導引您完成購買流程，非常感謝您的支持!"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
     elif "期待新的商品推出" in msg:
         re = "網站如果有新商品推出，皆會公布在最新消息上喔!我們也會發送通知給您~"
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))  
        
-    else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
-    line_bot_api.reply_message(event.reply_token,TextSendMessage(text=re))  
+
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+
 
 
 if __name__ == "__main__":
