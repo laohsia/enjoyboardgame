@@ -119,7 +119,7 @@ def handle_audio(event):
             alt_text='Carousel alt text', template=carousel_template)
         line_bot_api.reply_message(event.reply_token, template_message)
         return
-    else
+    else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
         return
 
@@ -131,7 +131,7 @@ def handle_audio(event):
             longitude=121.19105616458904)
         )
         return
-    else
+    else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
         return
 
@@ -224,7 +224,7 @@ def handle_audio(event):
             message
         )
         return
-    else
+    else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
         return
 
@@ -248,10 +248,10 @@ def handle_audio(event):
         re = "網站如果有新商品推出，皆會公布在最新消息上喔!我們也會發送通知給您~"
         
     print('Transcribe:', new_text)
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))
-    else
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
         
+    else:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = re))   
     
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
@@ -291,7 +291,7 @@ def handle_message(event):
             alt_text='Carousel alt text', template=carousel_template)
         line_bot_api.reply_message(event.reply_token, template_message)
         return
-    else
+    else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
         return
 
@@ -303,7 +303,7 @@ def handle_message(event):
             longitude=121.19105616458904)
         )
         return
-    else
+    else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
         return
 
@@ -396,7 +396,7 @@ def handle_message(event):
             message
         )
         return
-    else
+    else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
         return
 
@@ -418,14 +418,10 @@ def handle_message(event):
         re = "請上我們的官方網站，將想購買的商品加入購物車中，點擊結帳按鈕，系統即會導引您完成購買流程，非常感謝您的支持!"
     elif "期待新的商品推出" in msg:
         re = "網站如果有新商品推出，皆會公布在最新消息上喔!我們也會發送通知給您~"
-   
-
-    
-
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=re))
-    else
+       
+    else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = '抱歉，您的訊息中未包含關鍵字，煩請再試一次喔感謝~'))
-        
+    line_bot_api.reply_message(event.reply_token,TextSendMessage(text=re))  
 
 
 if __name__ == "__main__":
